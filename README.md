@@ -1,10 +1,10 @@
-# 🦙 Build Your First AI Chatbot with LLaMA 3.2
+# 🦙 Build Your First AI Chatbot with LLaMA 3.3
 
 **Workshop Duration:** 6:00 PM – 7:30 PM
 **Format:** Hybrid (In-Person & Remote)
 **Hosted by:** Versent
 
-Welcome to our hands-on workshop! In this session, you'll learn how to build a simple command-line chatbot using Python, powered by the open-source LLaMA 3.2 model hosted on Azure AI Foundry.
+Welcome to our hands-on workshop! In this session, you'll learn how to build a simple command-line chatbot using Python, powered by the open-source LLaMA 3.3 model hosted on Azure AI Foundry.
 
 ---
 
@@ -12,9 +12,9 @@ Welcome to our hands-on workshop! In this session, you'll learn how to build a s
 
 By the end of this workshop, you will:
 
-* Understand the basics of Large Language Models (LLMs) and LLaMA 3.2.
+* Understand the basics of Large Language Models (LLMs) and LLaMA 3.3.
 * Set up and configure a Python environment for API interactions.
-* Build a CLI-based chatbot that communicates with the LLaMA 3.2 model.
+* Build a CLI-based chatbot that communicates with the LLaMA 3.3 model.
 * Learn how to structure prompts and handle responses effectively.
 
 ---
@@ -25,7 +25,7 @@ Before we begin, ensure you have the following:
 
 * **Python 3.7+** installed on your machine.
 * A code editor (e.g., VS Code, PyCharm) or access to an online IDE like [Replit](https://replit.com/).
-* Internet connectivity to access the hosted LLaMA 3.2 model.
+* Internet connectivity to access the hosted LLaMA 3.3 model.
 * Your unique **API Key** and **Endpoint URL** provided by the instructor.
 
 ---
@@ -93,7 +93,7 @@ python chatbot.py
 You should see:
 
 ```bash
-🤖 Welcome to the LLaMA 3.2 Chatbot! Type 'exit' to quit.
+🤖 Welcome to the LLaMA 3.3 Chatbot! Type 'exit' to quit.
 You:
 ```
 
@@ -143,7 +143,7 @@ Start typing your messages, and the chatbot will respond accordingly.
 
 ## 🙌 Acknowledgments
 
-This workshop is proudly presented by [Robogals Melbourne](https://www.robogalsvic.org/melbourne), aiming to inspire and empower the next generation of engineers and technologists.
+This workshop is proudly presented by [Versent](www.versent.com.au), aiming to inspire and empower the next generation of engineers and technologists.
 
 ---
 
