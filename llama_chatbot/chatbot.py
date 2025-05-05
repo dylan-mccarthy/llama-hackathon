@@ -23,14 +23,14 @@ headers = {
 
 def chat():
     """
-    Implements an interactive chat loop with the LLaMA 3.2 API.
+    Implements an interactive chat loop with the LLaMA 3.3 using Azure AI Foundry API.
     
     This function manages the conversation state, sends user messages to the API,
     and displays the AI's responses until the user exits.
     """
     # Initialize conversation with a system message to define AI behavior
     messages = [{"role": "system", "content": "You are a helpful assistant."}]
-    print("🤖 Welcome to the LLaMA 3.2 Chatbot! Type 'exit' to quit.\n")
+    print("🤖 Welcome to the LLaMA 3.3 Chatbot! Type 'exit' to quit.\n")
     
     while True:
         # Get user input and handle exit commands
