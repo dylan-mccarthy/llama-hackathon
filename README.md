@@ -121,7 +121,7 @@ Start typing your messages, and the chatbot will respond accordingly.
 
   * Ensure your API URL and Key are correctly set in the `.env` file.
   * Check your internet connection.
-  * Verify that the LLaMA 3.2 model is deployed and accessible.
+  * Verify that the LLaMA 3.3 model is deployed and accessible.
 
 * **Module Not Found:**
 
