@@ -1,7 +1,7 @@
 """
-LLaMA 3.2 Chatbot
+Ollama Chatbot
 
-This module implements a simple command-line chatbot that uses the LLaMA 3.2 API
+This module implements a simple command-line chatbot that uses the Ollama API
 to generate responses to user inputs in a conversational format.
 """
 import os
@@ -12,25 +12,25 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Retrieve API configuration from environment variables
-API_URL = os.getenv("LLAMA_API_URL")
-API_KEY = os.getenv("LLAMA_API_KEY")
+# Default to localhost:11434 if not specified in environment
+API_URL = os.getenv("OLLAMA_API_URL", "http://localhost:11434/api/chat")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3.1")
 
-# Set up the HTTP headers for API authentication and content type
+# Set up the HTTP headers for content type (Ollama doesn't need auth token)
 headers = {
-    "Authorization": f"Bearer {API_KEY}",
     "Content-Type": "application/json"
 }
 
 def chat():
     """
-    Implements an interactive chat loop with the LLaMA 3.3 using Azure AI Foundry API.
+    Implements an interactive chat loop with Ollama using its REST API.
     
     This function manages the conversation state, sends user messages to the API,
     and displays the AI's responses until the user exits.
     """
     # Initialize conversation with a system message to define AI behavior
     messages = [{"role": "system", "content": "You are a helpful assistant."}]
-    print("🤖 Welcome to the LLaMA 3.3 Chatbot! Type 'exit' to quit.\n")
+    print(f"🤖 Welcome to the Ollama Chatbot ({OLLAMA_MODEL})! Type 'exit' to quit.\n")
     
     while True:
         # Get user input and handle exit commands
@@ -42,21 +42,23 @@ def chat():
         # Add user message to conversation history
         messages.append({"role": "user", "content": user_input})
         
-        # Prepare the API request payload
+        # Prepare the API request payload for Ollama
         payload = {
-            "messages": messages,  # Full conversation history
-            "temperature": 0.7,    # Controls randomness (0.0=deterministic, 1.0=creative)
-            "max_tokens": 500,     # Limits response length
-            "model": "Llama-3.3-70B-Instruct"  # Specifies which model to use
+            "model": OLLAMA_MODEL,     # Specifies which model to use
+            "messages": messages,      # Full conversation history
+            "stream": False,           # Get complete response, not streaming
+            "options": {
+                "temperature": 0.7,    # Controls randomness (0.0=deterministic, 1.0=creative)
+            }
         }
         
-        # Send request to LLaMA API
+        # Send request to Ollama API
         response = requests.post(API_URL, headers=headers, json=payload)
         
         # Process the API response
         if response.status_code == 200:
-            # Extract and display the AI's response
-            assistant_message = response.json()["choices"][0]["message"]["content"]
+            # Extract and display the AI's response - Ollama has different response format
+            assistant_message = response.json()["message"]["content"]
             print(f"AI: {assistant_message}\n")
             
             # Add AI response to conversation history for context in next turn
