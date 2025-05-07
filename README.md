@@ -48,8 +48,7 @@ llama_chatbot/
    If using Git:
 
    ```bash
-   git clone https://github.com/yourusername/llama_chatbot.git
-   cd llama_chatbot
+   git clone hhttps://github.com/dylan-mccarthy/llama-hackathon
    ```
 
    Or download the ZIP file and extract it.
@@ -66,6 +65,7 @@ llama_chatbot/
 3. **Install Dependencies**
 
    ```bash
+   cd llama_chatbot
    pip install -r requirements.txt
    ```
 
